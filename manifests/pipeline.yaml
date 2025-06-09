@@ -6,16 +6,16 @@ labels:
 parameters:
   - description: Git source URI for Jenkins jobs
     name: JENKINS_JOBS_URL
-    value: https://github.com/coreos/fedora-coreos-pipeline
+    value: https://github.com/c4rt0/fedora-coreos-pipeline
   - description: Git branch/tag reference for Jenkins jobs
     name: JENKINS_JOBS_REF
-    value: main
+    value: PR/Jeninks_deployment
   - description: Git source URI for pipeline configuration
     name: PIPECFG_URL
     value: in-tree
   - description: Git branch/tag reference for pipeline configuration
     name: PIPECFG_REF
-    value: main
+    value: PR/Jeninks_deployment
 
 objects:
 

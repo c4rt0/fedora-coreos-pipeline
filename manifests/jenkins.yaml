@@ -45,7 +45,7 @@ objects:
   metadata:
     annotations:
       # DELTA: added image trigger annotation to replace DeploymentConfig's triggers
-      image.openshift.io/triggers: '[{"from":{"kind":"ImageStreamTag","name":"${JENKINS_IMAGE_STREAM_TAG}"},"namespace":"${NAMESPACE}","fieldPath":"spec.template.spec.containers[?(@.name==\"${JENKINS_SERVICE_NAME}\")].image","paused":false}]'
+      image.openshift.io/triggers: '[{"from":{"kind":"ImageStreamTag","name":"jenkins:2","namespace":"openshift"},"fieldPath":"spec.template.spec.containers[?(@.name==\"${JENKINS_SERVICE_NAME}\")].image","paused":false}]'
       template.alpha.openshift.io/wait-for-ready: "true"
     name: ${JENKINS_SERVICE_NAME}
   spec:

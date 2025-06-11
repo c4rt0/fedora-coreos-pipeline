@@ -134,7 +134,8 @@ objects:
               path: /login
               port: 8080
             periodSeconds: 30
-            failureThreshold: 40
+            failureThreshold: 60
+            timeoutSeconds: 10
           readinessProbe:
             httpGet:
               path: /login
@@ -267,7 +268,7 @@ parameters:
 - description: Name of the ImageStreamTag to be used for the Jenkins image.
   displayName: Jenkins ImageStreamTag
   name: JENKINS_IMAGE_STREAM_TAG
-  value: jenkins:2
+  value: jenkins
 - description: When a fatal error occurs, an error log is created with information
     and the state obtained at the time of the fatal error.
   displayName: Fatal Error Log File

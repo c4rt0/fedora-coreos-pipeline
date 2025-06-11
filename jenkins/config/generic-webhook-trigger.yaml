@@ -1,6 +1,6 @@
 # Re-uses the secret from the Github Webhook plugin
 unclassified:
-  whitelist:
+  genericWebhookWhitelist:
     enabled: true
     whitelistItems:
     - hmacAlgorithm: HmacSHA256

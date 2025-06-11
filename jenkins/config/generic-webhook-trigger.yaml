@@ -1,9 +1,10 @@
 # Re-uses the secret from the Github Webhook plugin
 unclassified:
-  whitelist:
-    enabled: true
-    whitelistItems:
-    - hmacAlgorithm: HmacSHA256
-      hmacCredentialId: github-webhook-shared-secret
-      hmacEnabled: true
-      hmacHeader: x-hub-signature-256
+  generic-webhook-trigger:
+    whitelist:
+      enabled: true
+      whitelistItems:
+      - hmacAlgorithm: HmacSHA256
+        hmacCredentialId: github-webhook-shared-secret
+        hmacEnabled: true
+        hmacHeader: x-hub-signature-256

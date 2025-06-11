@@ -1,6 +1,6 @@
 # Re-uses the secret from the Github Webhook plugin
 unclassified:
-  generic-webhook-trigger:
+  genericWebhookTrigger:
     whitelist:
       enabled: true
       whitelistItems:

@@ -45,7 +45,7 @@ objects:
   metadata:
     annotations:
       # DELTA: added image trigger annotation to replace DeploymentConfig's triggers
-      image.openshift.io/triggers: '[{"from":{"kind":"ImageStreamTag","name":"jenkins:latest"},"fieldPath":"spec.template.spec.containers[?(@.name==\"jenkins\")].image","paused":false}]'
+      image.openshift.io/triggers: '[{"from":{"kind":"ImageStreamTag","name":"jenkins:latest"},"lastTriggeredImage":"","fieldPath":"spec.template.spec.containers[?(@.name==\"jenkins\")].image","paused":false}]'
       template.alpha.openshift.io/wait-for-ready: "true"
     name: ${JENKINS_SERVICE_NAME}
   spec:
@@ -134,7 +134,7 @@ objects:
               path: /login
               port: 8080
             periodSeconds: 30
-            failureThreshold: 60
+            failureThreshold: 40
             timeoutSeconds: 10
           readinessProbe:
             httpGet:
@@ -265,10 +265,10 @@ parameters:
   value: "false"
 # DELTA: No need for this parameter because we are using custom ImageStream
 #        definitions with hardcoded tag values.
-- description: Name of the ImageStreamTag to be used for the Jenkins image.
-  displayName: Jenkins ImageStreamTag
-  name: JENKINS_IMAGE_STREAM_TAG
-  value: jenkins
+# - description: Name of the ImageStreamTag to be used for the Jenkins image.
+#   displayName: Jenkins ImageStreamTag
+#   name: JENKINS_IMAGE_STREAM_TAG
+#   value: jenkins
 - description: When a fatal error occurs, an error log is created with information
     and the state obtained at the time of the fatal error.
   displayName: Fatal Error Log File

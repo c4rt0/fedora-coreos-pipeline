@@ -117,7 +117,7 @@ objects:
           # actually updated when the image gets updated.
           - name: OVERRIDE_PV_PLUGINS_WITH_IMAGE_PLUGINS
             value: "true"
-          image: jenkins:latest
+          image: ' '
           imagePullPolicy: IfNotPresent
           livenessProbe:
             failureThreshold: 2
@@ -154,7 +154,7 @@ objects:
             name: ${JENKINS_SERVICE_NAME}-data
           # DELTA: mount c-as-c config map
           - name: ${JENKINS_SERVICE_NAME}-casc-cfg
-            mountPath: /var/lib/jenkins/configuration-as-code
+            mountPath: /var/lib/jenkins/configuration-as-code/base
             readOnly: true
           # DELTA: mount c-as-c secret for Splunk
           - name: splunk-casc-cfg

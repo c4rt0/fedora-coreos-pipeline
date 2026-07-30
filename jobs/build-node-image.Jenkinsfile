@@ -76,8 +76,10 @@ def stream_class = "rhel-${rhel_major}"
 def stream_class_label = "io.openshift.os.streamclass=${stream_class}"
 
 // Derive the build-args file for labels.json and OCI LABELs.
-// RELEASE is e.g. "4.22-9.8" or "4.22-c9s".
-def build_args_file = "build-args-${params.RELEASE}.conf"
+// RELEASE is e.g. "4.22-9.8" but the file is "build-args-9.8-4.22.conf"
+// (RHEL version first, then OCP version).
+def release_parts = params.RELEASE.split('-', 2)
+def build_args_file = "build-args-${release_parts[1]}-${release_parts[0]}.conf"
 
 // Get the tag that's unique
 def unique_tag = ""

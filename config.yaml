@@ -19,8 +19,8 @@ streams:
     # Test: rawhide ppc64le podman crash A/B, bump-lockfile on ppc64le only.
     # Points at the c4rt0 fork so the Push stage cannot touch upstream.
     enable_bump_lockfile: true
-    source_config_url: https://github.com/c4rt0/fedora-coreos-config
-    source_config_ref: pin-podman-ppc64le
+    source_config_url: https://github.com/joelcapitao/fedora-coreos-config
+    source_config_ref: unpin-kernel
     additional_arches: [ppc64le]
     # source_oci_image: quay.io/coreos-devel/fedora-coreos:rawhide
     # env:

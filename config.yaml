@@ -20,7 +20,7 @@ streams:
     # Points at the c4rt0 fork so the Push stage cannot touch upstream.
     enable_bump_lockfile: true
     source_config_url: https://github.com/c4rt0/fedora-coreos-config
-    source_config_ref: test-rawhide-asis
+    source_config_ref: pin-podman-ppc64le
     additional_arches: [ppc64le]
     # source_oci_image: quay.io/coreos-devel/fedora-coreos:rawhide
     # env:
